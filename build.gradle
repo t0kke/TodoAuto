@@ -1,0 +1,32 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+def cucumberVersion = '4.7.4'
+def junitVersion = '5.5.2'
+def selenideVersion = '5.6.0'
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
+    compile "com.codeborne:selenide:$selenideVersion"
+    testImplementation "io.cucumber:cucumber-java8:$cucumberVersion"
+    testImplementation "io.cucumber:cucumber-junit:$cucumberVersion"
+
+}
+task cucumber() {
+    dependsOn assemble, compileTestJava
+    doLast {
+        javaexec {
+            main = "io.cucumber.core.cli.Main"
+            classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
+            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
+        }
+    }
+}

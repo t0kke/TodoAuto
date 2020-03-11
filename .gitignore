@@ -1,0 +1,11 @@
+/build/
+.gradle/
+.idea/.gitignore
+.idea/gradle.xml
+.idea/jarRepositories.xml
+.idea/misc.xml
+gradle/
+gradlew
+gradlew.bat
+settings.gradle
+.idea/vcs.xml
