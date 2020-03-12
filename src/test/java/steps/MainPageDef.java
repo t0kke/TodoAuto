@@ -15,4 +15,9 @@ public class MainPageDef {
     public void verifyAddingAAddedTask(String arg0) {
         mainPage.SearchForTaskByName(arg0);
     }
+
+    @Then("Delete a task {string}")
+    public void deleteATask(String arg0) {
+        mainPage.DeleteTaskByName(arg0);
+    }
 }
