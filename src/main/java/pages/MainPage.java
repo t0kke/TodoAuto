@@ -13,5 +13,8 @@ public class MainPage {
         this.TaskInputField.val(text).pressEnter();
     }
     public void SelectAllTasks(){ this.MarkAllTasks.click();}
+    public void SearchForTaskByName(String name) {
+        $(By.xpath("//div[text()='" + name + "']")).isDisplayed();
+    }
 
 }
