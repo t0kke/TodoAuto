@@ -29,7 +29,5 @@ public class MainPage {
 
     public void GoToActiveTab(){ this.ActiveTasksTab.click(); }
 
-    public void CheckThatThereAreNoActiveTasks() {
-        $(By.cssSelector("li.todo")).shouldNotHave(Condition.visible);
-    }
+    public void CheckThatThereAreNoActiveTasks() { $(By.cssSelector("li.todo")).shouldNotHave(Condition.visible); }
 }
