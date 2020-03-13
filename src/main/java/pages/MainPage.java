@@ -27,7 +27,21 @@ public class MainPage {
         $(By.xpath("//label[text()='" + name + "']")).shouldNotHave(Condition.visible);
     }
 
-    public void GoToActiveTab(){ this.ActiveTasksTab.click(); }
+    public void GoToActiveTab() {
+        this.ActiveTasksTab.click();
+    }
 
-    public void CheckThatThereAreNoActiveTasks() { $(By.cssSelector("li.todo")).shouldNotHave(Condition.visible); }
+    public void CheckThatThereAreNoActiveTasks() {
+        $(By.cssSelector("li.todo")).shouldNotHave(Condition.visible);
+    }
+
+    public void MarkTaskAsCompleted(String name) {
+        $(By.xpath("//label[.='" + name + "']/../input")).click();
+
+    }
+
+    public void CheckThatTaskIsCompleted(String name) {
+        $(By.xpath("//li[@class='todo completed']//label[.='" + name + "']")).isDisplayed();
+
+    }
 }
