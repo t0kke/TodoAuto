@@ -1,10 +1,10 @@
 plugins {
-    id 'java'
+    id "io.qameta.allure" version "2.8.1"
+    id "java"
 }
 
 group 'org.example'
 version '1.0-SNAPSHOT'
-
 sourceCompatibility = 1.8
 
 repositories {
@@ -13,20 +13,28 @@ repositories {
 def cucumberVersion = '4.7.4'
 def junitVersion = '5.5.2'
 def selenideVersion = '5.9.0'
+def allureCucumber4 = '2.13.2'
+
+allure {
+    version = '2.8.1'
+    aspectjweaver = true
+}
 dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter:$junitVersion"
     compile "com.codeborne:selenide:$selenideVersion"
+    compile "io.qameta.allure:allure-cucumber4-jvm:$allureCucumber4"
     testImplementation "io.cucumber:cucumber-java8:$cucumberVersion"
     testImplementation "io.cucumber:cucumber-junit:$cucumberVersion"
-
 }
+
 task cucumber() {
     dependsOn assemble, compileTestJava
     doLast {
         javaexec {
             main = "io.cucumber.core.cli.Main"
             classpath = configurations.cucumberRuntime + sourceSets.main.output + sourceSets.test.output
-            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources']
+            args = ['--plugin', 'pretty', '--glue', 'hellocucumber', 'src/test/resources',
+                    '--plugin', 'io.qameta.allure.cucumber4jvm.AllureCucumber4Jvm', '--glue', 'path_to_your_glue_code', ("path_to_your_feature")]
         }
     }
 }

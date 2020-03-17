@@ -12,7 +12,7 @@ public class MainPageDef {
         mainPage.InputTask(arg0);
     }
 
-    @Then("Verify adding a added task {string}")
+    @When("Verify adding a added task {string}")
     public void verifyAddingAAddedTask(String arg0) {
         mainPage.SearchForTaskByName(arg0);
     }
@@ -46,4 +46,10 @@ public class MainPageDef {
     public void taskIsMarkedAsCompleted(String arg0) {
         mainPage.CheckThatTaskIsCompleted(arg0);
     }
+
+//    @Then("Rename task {string} on {string}")
+//    public void renameTaskOn(String arg0, String arg1) {
+//        mainPage.RenameTask(arg0, arg1);
+//    }
+
 }
