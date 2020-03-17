@@ -3,6 +3,7 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -44,4 +45,9 @@ public class MainPage {
         $(By.xpath("//li[@class='todo completed']//label[.='" + name + "']")).isDisplayed();
 
     }
+
+//    public void RenameTask(String name, String newName) {
+//        $(By.xpath("//label[.='" + name + "']")).doubleClick().waitUntil(Condition.visible, 1000).sendKeys(Keys.CONTROL+"a");
+//        //$(By.xpath("//label[.='" + name + "']")).val(newName).click();
+//    }
 }
