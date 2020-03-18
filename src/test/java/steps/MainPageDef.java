@@ -47,6 +47,11 @@ public class MainPageDef {
         mainPage.CheckThatTaskIsCompleted(arg0);
     }
 
+    @When("The {string} section displays the task {string}")
+    public void theSectionDisplaysTheTask(String arg0, String arg1) {
+        mainPage.CheckTheTaskInSection(arg0, arg1);
+    }
+
 //    @Then("Rename task {string} on {string}")
 //    public void renameTaskOn(String arg0, String arg1) {
 //        mainPage.RenameTask(arg0, arg1);

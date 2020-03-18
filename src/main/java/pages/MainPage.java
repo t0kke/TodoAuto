@@ -50,4 +50,9 @@ public class MainPage {
 //        $(By.xpath("//label[.='" + name + "']")).doubleClick().waitUntil(Condition.visible, 1000).sendKeys(Keys.CONTROL+"a");
 //        //$(By.xpath("//label[.='" + name + "']")).val(newName).click();
 //    }
+
+    public void CheckTheTaskInSection(String section, String name) {
+        $(By.xpath("//a[.='" + section + "']")).click();
+        $(By.xpath("//label[.='" + name + "']")).shouldHave(Condition.visible);
+    }
 }
