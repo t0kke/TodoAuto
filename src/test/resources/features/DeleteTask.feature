@@ -1,4 +1,5 @@
-Feature: Удаление задач
+Feature: Deleting tasks
+
   Scenario: Deleting a task
-    Then Add new task "Задача, которую удалят"
-    Then Delete a task "Задача, которую удалят"
+    Then Add new task "Task to be deleted"
+    Then Delete a task "Task to be deleted"

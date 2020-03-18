@@ -1,8 +1,8 @@
-Feature: Создание новых задач в ToDo листе
+Feature: Creating new tasks
 
   Scenario: Task creation
-    Then Add new task "Новая задача"
-    When Verify adding a added task "Новая задача"
+    Then Add new task "New task"
+    When Verify adding a added task "New task"
 
 #  Scenario: Rename task
 #    Then Add new task "Задача, которую переименуют"
