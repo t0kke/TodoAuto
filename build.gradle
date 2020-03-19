@@ -12,7 +12,7 @@ repositories {
 }
 def cucumberVersion = '4.7.4'
 def junitVersion = '5.5.2'
-def selenideVersion = '5.9.0'
+def selenideVersion = '5.10.0'
 def allureCucumber4 = '2.13.2'
 
 allure {

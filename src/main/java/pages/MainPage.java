@@ -3,7 +3,6 @@ package pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Selenide.$;
 
@@ -51,8 +50,11 @@ public class MainPage {
 //        //$(By.xpath("//label[.='" + name + "']")).val(newName).click();
 //    }
 
-    public void CheckTheTaskInSection(String section, String name) {
+    public void checkSelectedSection(String nameSection) {
+        $(By.xpath("//a[.='" + nameSection + "']")).shouldHave(Condition.attribute("class", "selected"));
+    }
+
+    public void GoToTheSection(String section) {
         $(By.xpath("//a[.='" + section + "']")).click();
-        $(By.xpath("//label[.='" + name + "']")).shouldHave(Condition.visible);
     }
 }

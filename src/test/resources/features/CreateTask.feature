@@ -12,4 +12,5 @@ Feature: Creating new tasks
   Scenario: Check the display of the created task in the section
     Then Add new task "New task"
     When Verify adding a added task "New task"
-    When The "Active" section displays the task "New task"
+    When Go to the section "Active"
+    When Checking that the "Active" section is selected
